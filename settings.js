@@ -40,7 +40,7 @@ function strengthen (isOilUsed) { // 강화 성공 시 true 실패시 false 반�
     obj = Bean[level-1]
     if (obj.s_cost <= coin) {
         coin -= obj.s_cost;
-        if (Math.random() < obj.prob + isOilUsed*0.05) {
+        if (1 - Math.random() <= obj.prob + isOilUsed*0.05) {
             items.oil -= 1;
             return true
         } else {
