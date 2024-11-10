@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+}
+
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+#image {
+    height: 40vh;
+    width: 40vh;
+    transition: transform 0.2s ease;
+}
+
+#image:hover {
+    transform: scale(1.03);
+}
+
