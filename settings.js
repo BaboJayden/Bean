@@ -37,11 +37,12 @@ let items = {
 }
 
 function strengthen (isOilUsed) { // 강화 성공 시 true 실패시 false 반환하는 함수, isOilUsed에 참이면 1, 거짓이면 0 넣을 것
+    const rand = Math.random()
     obj = Bean[level-1]
     if (obj.s_cost <= coin) {
         coin -= obj.s_cost;
-        if (Math.random() <= obj.prob + isOilUsed*0.05) {
-            items.oil -= 1;
+        if (rand < obj.prob + isOilUsed*0.05) {
+            items.oil -= isOilUsed;
             return true
         } else {
             return false
@@ -72,4 +73,5 @@ function useCake ()
     items.cake -= Bean[level-1].protect
     return;
 }
+
 
