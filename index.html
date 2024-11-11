@@ -7,13 +7,29 @@
     <title>콩 키우기 게임</title>
 </head>
 <body>
+    <div class="sidemenu">
+        <input type="checkbox" name="sidebutton" id="sidebutton">
+        <label for="sidebutton">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <div class="sidebar">
+            <div class="fontmanager">
+                <div id="shop">상점 열기</div>
+                <div id="store">콩 보관하기</div>
+                <div id="items">아이템 확인하기</div>
+                <div id="dict">콩 도감 열기</div>
+                <input type="checkbox" name="oil" id="oil">
+                <label for="oil"><div id="useoil">콩기름 사용하기</div></label>
+            </div>
+        </div>
+    </div>
     <div class="parent">
         <div class="image">
             <input type="image" src="start.png" id="image"/>
         </div>
     </div>
-    <input type="checkbox" name="useoil" id="useoil">
-    <label for="useoil">콩기름 사용</label>
     <script src="settings.js"></script>
     <script src="script.js"></script>
 </body>
