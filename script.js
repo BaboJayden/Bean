@@ -1,6 +1,12 @@
 const image = document.getElementById("image")
-const checkbox = document.getElementById("useoil")
-const prob = [50,90,80,70,1,1,1,1,1,1,1,1,1,1,1] // Probability
+const checkbox = document.getElementById("oil")
+const html = {
+    shop : document.getElementById("shop"),
+    store : document.getElementById("store"),
+    items : document.getElementById("items"),
+    dict : document.getElementById("dict"),
+    useoil : document.getElementById("useoil")
+}
 
 const changeImg = lv => {
     image.src = `bean${lv}.png`;
@@ -32,19 +38,26 @@ image.addEventListener("click", () => {
             level++;
             changeImg(level)
         } else if (Bean[level-1].protect <= items.cake) {
-            if (confirm(`인절미 ${Bean[level-1].protect}개를 사용하시겠습니까?`)) {
+            if (confirm(`강화에 실패했습니다.\n인절미 ${Bean[level-1].protect}개를 사용하시겠습니까?`)) {
                 useCake()
             } else {
                 items.powder += givePowder()
                 level = 1;
                 changeImg(level)
             }
+        } else {
+            items.powder += givePowder()
+            level = 1;
+            changeImg(level)
         }
+        checkbox.checked = false;
     } else if (level == 25) {
         // 엔딩
     } 
 })
 
 // Functions
+
+
 
 
