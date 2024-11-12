@@ -20,8 +20,8 @@ const changeImg = lv => {
 image.addEventListener("click", () => {
     let check = 0;
     if (checkbox.checked) {
-        if (items.oil<=0) {
-            alert("기름이 없습니다.");
+        if (items.oil<=0 && level!=0) {
+            alert("콩기름이 없습니다.");
             return
         } else {
             check = 1;
@@ -34,7 +34,9 @@ image.addEventListener("click", () => {
         changeImg(level)
     } else if (level < 25){
         // 강화시키기
-        if (strengthen(check)){
+        if (strengthen(check) == undefined){
+
+        } else if (strengthen(check)){
             level++;
             changeImg(level)
         } else if (Bean[level-1].protect <= items.cake) {
@@ -57,7 +59,5 @@ image.addEventListener("click", () => {
 })
 
 // Functions
-
-
 
 
