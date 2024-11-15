@@ -20,13 +20,24 @@
                 <input type="checkbox" name="shopcheck" id="shopcheck">
                 <label for="shopcheck"><div id="shop">상점 열기</div></label>
                 <div class="shop">
-                    <div>
+                    <div class="shopscreen">
                         <label for="shopcheck"></label>
+                        <div class="sellbean" id="sellbean">현재 콩 팔기</div>
+                        <div class="caketrade1" id="caketrade1">1인절미 / 30콩가루</div>
+                        <div class="caketrade2" id="caketrade2">10인절미 / 250콩가루</div>
+                        <div class="oiltrade" id="oiltrade">1콩기름 / 300콩가루</div>
                     </div>
                     <label for="shopcheck"></label>
                 </div>
                 <div id="store">콩 보관하기</div>
-                <div id="items">아이템 확인하기</div>
+                <input type="checkbox" name="storecheck" id="storecheck">
+                <label for="storecheck"><div id="items">아이템 확인하기</div></label>
+                <div class="store">
+                    <div class="storescreen">
+                        <label for="storecheck"></label>
+                    </div>
+                    <label for="storecheck"></label>
+                </div>
                 <div id="dict">콩 도감 열기</div>
                 <input type="checkbox" name="oil" id="oil">
                 <label for="oil"><div id="useoil">콩기름 사용하기</div></label>
@@ -37,6 +48,14 @@
         <div class="image">
             <input type="image" src="start.png" id="image"/>
         </div>
+    </div>
+    <div class="info">
+        <div id="level"></div>
+        <div id="s_cost"></div>
+        <div id="s_item"></div>
+        <div id="probability"></div>
+        <div id="value"></div>
+        <div id="currentcoin"></div>
     </div>
     <script src="settings.js"></script>
     <script src="script.js"></script>
