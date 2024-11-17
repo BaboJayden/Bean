@@ -73,3 +73,30 @@ function useCake ()
     return;
 }
 
+function caketrade1() {
+    if(items.powder >= 30) {
+        items.cake += 1;
+        items.powder -= 30;
+    } else {
+        alert(`콩가루 ${30-items.powder}개가 부족합니다.`)
+    }
+}
+
+function caketrade2() {
+    if(items.powder >= 250) {
+        items.cake += 10;
+        items.powder -= 250;
+    } else {
+        alert(`콩가루 ${250-items.powder}개가 부족합니다.`)
+    }
+}
+
+function oiltrade() {
+    if(items.powder >= 300) {
+        items.oil += 1;
+        items.powder -= 300;
+    } else {
+        alert(`콩가루 ${300-items.powder}개가 부족합니다.`)
+    }
+}
+
