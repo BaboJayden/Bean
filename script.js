@@ -78,6 +78,19 @@ document.getElementById("sellbean").addEventListener("click", () => {
     changeImg(level);
 })
 
+document.getElementById("caketrade1").addEventListener("click", () => {
+    caketrade1();
+})
+
+document.getElementById("caketrade2").addEventListener("click", () => {
+    caketrade2();
+})
+
+document.getElementById("oiltrade").addEventListener("click", () => {
+    oiltrade();
+})
+
+
 // Functions
 
 
