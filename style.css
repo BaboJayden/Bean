@@ -79,7 +79,7 @@ body {
     z-index: 1;
 }
 
-#shop, #store, #items, #dict, #useoil {
+#shop, #store, #items, #dict, #link, #useoil {
     padding: 0.3vh;
     font-size: 4vh;
     color: #ccc;
