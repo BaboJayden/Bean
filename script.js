@@ -11,7 +11,14 @@ const html = {
     value : document.getElementById("value"),
     s_item : document.getElementById("s_item"),
     currentcoin : document.getElementById("currentcoin"),
-    probability : document.getElementById("probability")
+    probability : document.getElementById("probability"),
+    powdernumber : document.getElementById("powdernumber"),
+    cakenumber : document.getElementById("cakenumber"),
+    oilnumber : document.getElementById("oilnumber"),
+    lv17number : document.getElementById("lv17number"),
+    lv18number : document.getElementById("lv18number"),
+    lv19number : document.getElementById("lv19number"),
+    keep : document.getElementById("store")
 }
 
 const changeImg = lv => {
@@ -44,7 +51,7 @@ image.addEventListener("click", () => {
     if (level == 0) { // 게임 시작
         level = 1;
         changeImg(level)
-    } else if (level < 25){
+    } else if (level <= 18 || (level >= 22 && level != 25)){
         // 강화시키기
         if (strengthen(check) == undefined){
 
@@ -70,7 +77,31 @@ image.addEventListener("click", () => {
         checkbox.checked = false;
     } else if (level == 25) {
         // 엔딩
-    } 
+    } else if (level>=19 && level<=21) {
+        if(items["bean"+(level-2)] >= 3) {
+            if(strengthen(check) == undefined) {
+                
+            } else if (strengthen(check)){
+                items["bean"+(level-2)] -= 3;
+                level += 1;
+                changeImg(level);
+            } else if (Bean[level-1].protect <= items.cake) {
+                coin -= Bean[level-1].s_cost;
+                if (confirm(`강화에 실패했습니다.\n인절미 ${Bean[level-1].protect}개를 사용하시겠습니까?`)) {
+                    useCake()
+                } else {
+                    items.powder += givePowder()
+                    level = 1;
+                    changeImg(level)
+                }
+            } else {
+                items["bean"+(level-2)] -= 3;
+                items.powder += givePowder()
+                level = 1;
+                changeImg(level)
+            }
+        }
+    }
 })
 
 document.getElementById("sellbean").addEventListener("click", () => {
@@ -88,6 +119,27 @@ document.getElementById("caketrade2").addEventListener("click", () => {
 
 document.getElementById("oiltrade").addEventListener("click", () => {
     oiltrade();
+})
+
+
+document.getElementById("items").addEventListener("click", () => {
+    html.powdernumber.innerHTML = `콩가루 : ${items.powder}개`
+    html.cakenumber.innerHTML = `인절미 : ${items.cake}개`
+    html.oilnumber.innerHTML = `콩기름 : ${items.oil}개`
+
+    html.lv17number.innerHTML = `${Bean[16].name} : ${items.bean17}개`
+    html.lv18number.innerHTML = `${Bean[17].name} : ${items.bean18}개`
+    html.lv19number.innerHTML = `${Bean[18].name} : ${items.bean19}개`
+})
+
+
+document.getElementById("store").addEventListener("click", () => {
+    if(level>=17 && level<=19) {
+        keepBean();
+        changeImg(level);
+    } else {
+        alert("콩은 17, 18, 19단계에서만 보관할 수 있습니다.")
+    }
 })
 
 
