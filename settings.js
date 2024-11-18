@@ -15,15 +15,15 @@ Bean = [
     {name : "콩나물", level : 14, prob : 0.40, s_cost : 1280000, value : 250000000, protect : 10, s_item : "없음", },
     {name : "강낭콩", level : 15, prob : 0.35, s_cost : 3840000, value : 1000000000, protect : 15, s_item : "없음", },
     {name : "콩밥", level : 16, prob : 0.30, s_cost : 11520000, value : 3000000000, protect : 20, s_item : "없음", },
-    {name : "일반적인 콩", level : 17, prob : 0.50, s_cost : 0, value : 5000000000, protect : 20, s_item : "없음", },
-    {name : "검은콩", level : 18, prob : 0.50, s_cost : 0, value : 6000000000, protect : 25, s_item : "없음", },
-    {name : "녹두", level : 19, prob : 0.40, s_cost : 0, value : 7000000000, protect : 30, s_item : "없음", },
-    {name : "두유", level : 20, prob : 0.40, s_cost : 0, value : 8000000000, protect : 35, s_item : "없음", },
-    {name : "검은콩 두유", level : 21, prob : 0.30, s_cost : 0, value : 10000000000, protect : 40, s_item : "없음", },
+    {name : "일반적인 콩", level : 17, prob : 0.50, s_cost : 5000000, value : 5000000000, protect : 20, s_item : "없음", },
+    {name : "검은콩", level : 18, prob : 0.50, s_cost : 5000000, value : 6000000000, protect : 25, s_item : "없음", },
+    {name : "녹두", level : 19, prob : 0.40, s_cost : 0, value : 7000000000, protect : 30, s_item : "3x 일반적인 콩", },
+    {name : "두유", level : 20, prob : 0.40, s_cost : 0, value : 8000000000, protect : 35, s_item : "3x 검은콩", },
+    {name : "검은콩 두유", level : 21, prob : 0.30, s_cost : 0, value : 10000000000, protect : 40, s_item : "3x 녹두", },
     {name : "녹두 두유", level : 22, prob : 0.30, s_cost : 0, value : 20000000000, protect : 50, s_item : "없음", },
     {name : "완두콩", level : 23, prob : 0.25, s_cost : 0, value : 50000000000, protect : 80, s_item : "없음", },
     {name : "멘델의 완두콩", level : 24, prob : 0.30, s_cost : 0, value : 1000000000000, protect : 1000000, s_item : "없음", },
-    {name : "빛나는 콩", level : 25, prob : 0, s_cost : 0, value : "전설", protect : 1, s_item : "없음", },
+    {name : "빛나는 콩", level : 25, prob : 0, s_cost : 0, value : "비트", protect : 1, s_item : "없음", },
 ]
 
 let level = 0;
@@ -32,8 +32,9 @@ let items = {
     powder : 0, // 화폐
     oil : 0, // 확률 5% 상승, 300콩가루
     cake : 0, // 방지권, 30콩가루 / 250콩가루에 10인절미
-    bean15 : 0,
-    bean16 : 0,
+    bean17 : 0,
+    bean18 : 0,
+    bean19 : 0
 }
 
 function strengthen (isOilUsed) { // 강화 성공 시 true 실패시 false 반환하는 함수, isOilUsed에 참이면 1, 거짓이면 0 넣을 것
@@ -99,4 +100,3 @@ function oiltrade() {
         alert(`콩가루 ${300-items.powder}개가 부족합니다.`)
     }
 }
-
