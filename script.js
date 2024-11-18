@@ -143,7 +143,7 @@ document.getElementById("store").addEventListener("click", () => {
 })
 
 document.getElementById("link").addEventListener("click", () => {
-    window.open("/README.md")
+    window.open("https://github.com/BaboJayden/Bean/blob/main/README.md")
 })
 
 
