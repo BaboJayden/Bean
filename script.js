@@ -142,6 +142,10 @@ document.getElementById("store").addEventListener("click", () => {
     }
 })
 
+document.getElementById("link").addEventListener("click", () => {
+    window.open("/README.md")
+})
+
 
 // Functions
 
